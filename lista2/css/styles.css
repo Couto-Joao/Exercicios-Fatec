@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: tan;
+    display: flex; /* usa o modelo FlexBox. conceito de caixa para posicionamento */
+    align-items: center; /* centralizar verticalmente */
+    justify-content: center; /* centralizar horizontalmente */
+    height: 100vh; /* define a altura da tela - 100% */
+}
+.card{
+    background-image: url(https://th.bing.com/th/id/OIP.M4Bj5f2G7NqmURZA_VT6SgHaHj?rs=1&pid=ImgDetMain);
+    background-color: beige;
+    padding: 20px; /* espaçamento interno */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: beige;
+}
+button {
+    background: gray;
+    color: white;
+    border: none;
+    padding: 10px 15px;  /*10 px ~e superior e inferior e 15px esquerda e direita */
+    border-radius: 5px;
+    cursor: pointer; /* ponteiro do mouse */
+}
+button:hover {
+    background-color: lightseagreen;
+}
+.image {
+    border-radius: 50%;
+    width: 200px; /* largura da imagem */
+    height: 200px;
+    margin-bottom: 10px; /*espaçamento externo abaixo */
+}
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px; /* espaçamento interno */
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0px;
+}
+.sidebar ul li {
+    margin: 20px 0;/* 20 px acima e abaixo e 0 a direita e esquerda */
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container {
+    flex-grow: 1; /* capacidade de um elemento crescer */
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
