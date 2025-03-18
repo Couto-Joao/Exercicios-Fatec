@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: tan;
+    background-color: rgb(31, 44, 63);
     display: flex; /* usa o modelo FlexBox. conceito de caixa para posicionamento */
     align-items: center; /* centralizar verticalmente */
     justify-content: center; /* centralizar horizontalmente */
