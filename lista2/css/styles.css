@@ -5,6 +5,7 @@ body {
     align-items: center; /* centralizar verticalmente */
     justify-content: center; /* centralizar horizontalmente */
     height: 100vh; /* define a altura da tela - 100% */
+    background-image: url(https://th.bing.com/th/id/OIP.h8cWaC_zvXENLttL-NtkrwHaEK?rs=1&pid=ImgDetMain);
 }
 .card{
     background-image: url(https://th.bing.com/th/id/OIP.M4Bj5f2G7NqmURZA_VT6SgHaHj?rs=1&pid=ImgDetMain);
@@ -14,6 +15,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
     color: beige;
+    text-shadow: -2px -2px 3px black;
+    font-family: OCR A Std, monospace;
 }
 button {
     background: gray;
@@ -41,6 +44,9 @@ button:hover {
     position: fixed;
     left: 0;
     top: 0;
+    text-shadow: -2px -2px 3px black;
+    background-image: url(https://wallpaperaccess.com/full/8386746.jpg);
+    font-family: OCR A Std, monospace;
 }
 .sidebar ul {
     list-style: none;
