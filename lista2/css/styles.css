@@ -15,7 +15,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
     color: beige;
-    text-shadow: -2px -2px 3px black;
+    text-shadow: -2px -2px 5px black;
     font-family: OCR A Std, monospace;
 }
 button {
@@ -44,7 +44,7 @@ button:hover {
     position: fixed;
     left: 0;
     top: 0;
-    text-shadow: -2px -2px 3px black;
+    text-shadow: -2px -2px 5px black;
     background-image: url(https://wallpaperaccess.com/full/8386746.jpg);
     font-family: OCR A Std, monospace;
 }

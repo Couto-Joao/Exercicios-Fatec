@@ -106,3 +106,57 @@ function exe5() {
     //     document.getElementById('resultado').textContent = `A divisão entre o primeiro e o segundo é: ${divisao}`;
     // }
 }
+
+function exe6() {
+    let operacao = Number(document.getElementById('op').value);
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+
+    switch(operacao) {
+        case 1:
+            // para elevar um número ao outro pode se usar tambem Math.pow(num1, num2);
+            let numeroElevado = (num1 ** num2).toFixed(2);
+            document.getElementById('resultado').textContent = `Resultado: ${numeroElevado}`;
+            break
+        case 2:
+            // calculando raíz quadrada;
+            let raizNum1 = Math.sqrt(num1).toFixed(2);
+            let raizNum2 = Math.sqrt(num2).toFixed(2);
+            document.getElementById('resultado').innerHTML = `Raíz quadrada num1 = ${raizNum1} <br/> Raíz quadrada num2 = ${raizNum2}`;
+            // para usar <br/> --> (pular linha) precisa usar innerHTML ao invés de textContent ou innerText
+            break
+        case 3:
+            // calculando raíz cúbica;
+            let raizCubicaNum1 = Math.cbrt(num1).toFixed(2);
+            let raizCubicaNum2 = Math.cbrt(num2).toFixed(2);
+            document.getElementById('resultado').innerHTML = `Raíz cúbica num1 = ${raizCubicaNum1} <br/> Raíz cúbica num2 = ${raizCubicaNum2}`;
+            break
+    }
+}
+
+function exe7() {
+    let salario = Number(document.getElementById('salario').value);
+    let porcentagemAumento = 0.3;
+
+    if(salario > 500) {
+        alert('Somente pessoas que recebem menos que 30% receberam o aumento.');
+        document.getElementById('salario').value = '';
+        document.getElementById('resultado').textContent = 'Resultado: ';
+    } else {
+        // cálculo
+        let aumento = salario + (salario * porcentagemAumento);
+        document.getElementById('resultado').textContent = `Seu salário com aumento em 30%: ${aumento}`;
+    }
+}
+
+function exe8() {
+    let salario = Number(document.getElementById('salario').value);
+
+    if(salario > 300) {
+        let aumentoAcima300 = (salario + (salario * 0.15));
+        document.getElementById('resultado').textContent = `Seu salário com 15% de aumento: ${aumentoAcima300}` //template string
+    } else {
+        let aumentoAte300 = (salario + (salario * 0.35)).toFixed(2);
+        document.getElementById('resultado').textContent = `Seu salário com 15% de aumento: ${aumentoAte300}` //template string
+    }
+}
