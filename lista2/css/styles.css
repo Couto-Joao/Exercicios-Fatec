@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: rgb(31, 44, 63);
     display: flex; /* usa o modelo FlexBox. conceito de caixa para posicionamento */
     align-items: center; /* centralizar verticalmente */
@@ -16,7 +18,7 @@ body {
     text-align: center;
     color: beige;
     text-shadow: -2px -2px 5px black;
-    font-family: OCR A Std, monospace;
+    font-family: "Montserrat", sans-serif;
 }
 button {
     background: gray;
@@ -46,7 +48,7 @@ button:hover {
     top: 0;
     text-shadow: -2px -2px 5px black;
     background-image: url(https://wallpaperaccess.com/full/8386746.jpg);
-    font-family: OCR A Std, monospace;
+    font-family: "Montserrat", sans-serif;
 }
 .sidebar ul {
     list-style: none;
