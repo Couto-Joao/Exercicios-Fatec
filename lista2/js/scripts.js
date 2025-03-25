@@ -160,3 +160,45 @@ function exe8() {
         document.getElementById('resultado').textContent = `Seu salário com 15% de aumento: ${aumentoAte300}` //template string
     }
 }
+
+function exe9() {
+    let saldoMedio = Number(document.getElementById('saldoMedio').value);
+    let credito = 0;
+
+    if(saldoMedio > 400) {
+        credito = (saldoMedio * 0.3);
+    } else if((saldoMedio > 300) && (saldoMedio <= 400)) {
+        credito = (saldoMedio * 0.25);
+    } else if((saldoMedio > 200) && (saldoMedio <= 300)) {
+        credito = (saldoMedio * 0.2);
+    } else if((saldoMedio >= 0) && (saldoMedio <= 200)) {
+        credito = (saldoMedio * 0.1);
+    } else {
+        document.getElementById('resultado').textContent = `Saldo não pode ser negativo!`;
+        document.getElementById('saldoMedio').value = '';
+        return;
+    }
+    document.getElementById('resultado').textContent = `Saldo médio: ${saldoMedio} | Crédito disponível ${credito}`;
+}
+
+function exe10() {
+    let custo = Number(document.getElementById('custoFabrica').value);
+    let imposto = 0;
+    let distribuidor = 0;
+
+    if(custo <= 12000) {
+        distribuidor = custo * 0.05;
+    } else if((custo > 12000) && (custo <=25000)) {
+        imposto = custo * 0.15;
+        distribuidor = custo * 0.1;
+    } else if(custo > 25000) {
+        imposto = custo * 0.2;
+        distribuidor = custo * 0.15;
+    } else {
+        document.getElementById('resultado').textContent = 'Custo não pode ser negativo!';
+        document.getElementById('custoFabrica').value = '';
+        return;
+    }
+    let valorConsumidor = custo + imposto + distribuidor;
+    document.getElementById('resultado').innerHTML = `Custo de Fábrica: ${custo} <br/> Distribuidor: ${distribuidor} <br/> Imposto: ${imposto} <br/> Valor ao consumidor: ${valorConsumidor}`;
+}
