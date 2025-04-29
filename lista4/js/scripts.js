@@ -43,3 +43,38 @@ function exe2() {
     document.getElementById('resultado').innerHTML = `Números múltiplos de 2 e 3 = ${multiplos2e3} <br> Números múltiplos de 2 = ${multiplos2} <br> 
     Números múltiplos de 3 = ${multiplos3}`;
 }
+
+function exe3() {
+   let codigos = [], estoque = [];
+   
+   for(let i = 0;i < 3;i++) {
+        codigos.push(prompt('Informe o código do produto:'));
+        estoque.push(Number(prompt('Informe a quantidade em estoque: ')));
+   }
+
+   //comprando
+   let cliente = Number(prompt('Informe código do cliente: '));
+   do {
+        let codigoProduto;
+        codigoProduto = prompt('Informe código do produto para compra: ');
+        let quantidade;
+        quantidade = Number(prompt('Informe a quantidade do produto para compra: '));
+    
+        // procurar para ver se o produto existe;
+        let posicao = codigos.indexOf(codigo);
+        if(posicao == -1) {
+            alert('Código Inexistente');
+        } else {
+            if(estoque[posicao] >= quantidade) {
+                estoque[posicao] = estoque[posicao] - quantidade;
+                alert('Pedido atendido, obrigado e volte sempre.');
+            } else {
+                alert('Não temos estoque suficiente dessa mercadoria.');
+            }
+        }
+        cliente = Number(prompt('Informe o código do novo cliente. Digite 0 para encerrar.'));
+   }
+   while(cliente != 0) {
+        alert(`${codigos} ${estoque}`);
+   }
+}
