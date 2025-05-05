@@ -50,7 +50,7 @@ function exe3() {
    for(let i = 0;i < 3;i++) {
         codigos.push(prompt('Informe o código do produto:'));
         estoque.push(Number(prompt('Informe a quantidade em estoque: ')));
-   }
+    }
 
    //comprando
    let cliente = Number(prompt('Informe código do cliente: '));
@@ -61,7 +61,7 @@ function exe3() {
         quantidade = Number(prompt('Informe a quantidade do produto para compra: '));
     
         // procurar para ver se o produto existe;
-        let posicao = codigos.indexOf(codigo);
+        let posicao = codigos.indexOf(codigoProduto);
         if(posicao == -1) {
             alert('Código Inexistente');
         } else {
@@ -73,8 +73,54 @@ function exe3() {
             }
         }
         cliente = Number(prompt('Informe o código do novo cliente. Digite 0 para encerrar.'));
-   }
+    }
    while(cliente != 0) {
         alert(`${codigos} ${estoque}`);
-   }
+    }
+}
+
+function exe4() {
+    var vetor = [];
+
+    for(var i = 0;i < 15;i++) {
+        vetor.push(Number(prompt(`Informe o ${i + 1}o número: `)));
+    }
+
+    var posicoes = [];
+    for(i = 0;i < 15;i++) {
+        if(vetor[i] == 30) {
+            posicoes.push(i);
+        }
+    }
+    alert(`Número 30 encontrado nas posições ${posicoes}`);
+}
+
+function exe5() {
+    var logica = [], linguagem = [];
+
+    for(var i = 0;i < 15;i++) {
+        logica.push(Number(prompt(`Informe o ${i + 1}o. aluno que faz a disciplina Lógica`)));
+    }
+    for(var i = 0;i < 15;i++) {
+        linguagem.push(Number(prompt(`Informe o ${i + 1}o. aluno que faz a disciplina Linguagem`)));
+    }
+
+    var interseccao = [];
+
+    for(i = 0;i < 15;i++) {
+        var posicao = linguagem.indexOf(logica[i]);
+        if(posicao != -1) {
+            interseccao.push(logica[i]);
+        }
+    }
+    alert(`Alunos que fazem Lógica e Linguagem: ${interseccao}`);
+}
+
+function exe6() {
+    var vendas = [], percentual = [], nome = [];
+    for(var i = 0;i < 5;i++) {
+        nome.push(prompt(`Informe o nome do ${i+1}o. vendedor.`));
+        vendas.push(Number(prompt(`Informe o total vendido pelo ${i+1}o. vendedor.`)));
+        percentual.push(Number(prompt(`Informe o percentual das vendas do ${i+1}o. vendedor.`)));
+    }
 }
