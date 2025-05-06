@@ -117,10 +117,56 @@ function exe5() {
 }
 
 function exe6() {
-    var vendas = [], percentual = [], nome = [];
-    for(var i = 0;i < 5;i++) {
+    var vendas = [], percentual = [], nome = [], comissao = [];
+    for(var i = 0;i < 3;i++) {
         nome.push(prompt(`Informe o nome do ${i+1}o. vendedor.`));
         vendas.push(Number(prompt(`Informe o total vendido pelo ${i+1}o. vendedor.`)));
         percentual.push(Number(prompt(`Informe o percentual das vendas do ${i+1}o. vendedor.`)));
+        //calcula a comissão
+        comissao.push((vendas[i] * percentual[i]) / 100);
     }
+    //relação dos vendedores e valores a receber
+    var relatorio = '';
+    for(i = 0;i < 3;i++) {
+        relatorio += `Vendedor ${nome[i]} vai receber: ${comissao[i]} `;
+    }
+    alert(relatorio);
+
+    var totalVendas = 0;
+    for(i=0;i<3;i++) {
+        totalVendas = totalVendas + vendas[i];
+    }
+    alert(`Total de vendas de todos os vendedores: ${totalVendas}`);
+
+    var maiorValor = comissao[0];
+    var menorValor = comissao[0];
+    for(i=1;i<3;i++) {
+        if(comissao[i] > maiorValor) {
+            maiorValor = comissao[i];
+        }
+        if(comissao[i] < menorValor) {
+            menorValor = comissao[i];
+        }
+    }
+    var iMaior = comissao.indexOf(maiorValor); // recuperando a posição do maior valor
+    alert(`${nome[iMaior]} vai receber maior comissão de ${maiorValor}`);
+    alert(`${nome[comissao.indexOf(menorValor)]} vai receber menor comissão de ${menorValor}`);
+}
+
+function exe7() {
+    var vetor = [], negativos = [], positivos = 0;
+
+    for(var i = 0;i < 10;i++) {
+        vetor.push(Number(prompt('Informe um número real: ')));
+    }
+
+    for(i = 0;i < 10;i++) {
+        if(vetor[i] < 0) {
+            negativos.push(vetor[i]);
+        } else if(vetor[i] >= 0) {
+            positivos += vetor[i];
+        }
+    }
+    alert(`Quantidade de números negativos: ${negativos.length}`);
+    alert(`Soma dos números positivos: ${positivos}`);
 }
