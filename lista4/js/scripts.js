@@ -170,3 +170,55 @@ function exe7() {
     alert(`Quantidade de números negativos: ${negativos.length}`);
     alert(`Soma dos números positivos: ${positivos}`);
 }
+
+function exe8() {
+    var nomes = [], media = [];
+
+    for(var i = 0;i < 3;i++) {
+        nomes.push(prompt('Informe o nome do aluno: '));
+        media.push(prompt(`Informe a média de ${nomes[i]}`));
+    }
+
+    var maior = media[0];
+
+    for(i = 0;i<3;i++) {
+        if(media[i] > maior) {
+            maior = media[i];
+        }
+    }
+
+    var posicao = media.indexOf(maior);
+    alert(`Nome do aluno com maior média ${nome[posicao]}`);
+
+    for(i=0;i<3;i++) {
+        if(medias[i] < 3) {
+            alert(`${nome[i]} precisa tirar ${10 - media[i]}`);
+        }
+    }
+
+}
+
+function exe9() {
+    var nomes = [], codigos = [], precos = [];
+
+    for(var i=0;i<3;i++) {
+        nomes.push(prompt(`Informe o nome do produto ${i + 1}`));
+        codigos.push(Number(prompt(`Informe o código do produto ${i+1}`)));
+        precos.push(Number(prompt(`Informe o preço do produto ${i+1}`)));
+    }
+
+    var novo
+    for(var i=0;i<3;i++) {
+        if((codigos[i] % 2 == 0) && (precos[i] > 1000)) {
+            novo = precos[i] + precos[i] * 20/100;
+        } else if (codigos[i] % 2 == 0) {
+            novo = precos[i] + precos[i] * 15/100;
+        } else if (precos[i] > 100) {
+            novo = precos[i] + precos[i] * 10/100;
+        } else {
+            novo = precos[i];
+        }
+        alert(`${nomes[i]} - ${codigos[i]} ${precos[i]} - ${novo}`);
+    }
+
+}
