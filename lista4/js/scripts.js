@@ -117,40 +117,42 @@ function exe5() {
 }
 
 function exe6() {
-    var vendas = [], percentual = [], nome = [], comissao = [];
+    var vetor = [];
     for(var i = 0;i < 3;i++) {
-        nome.push(prompt(`Informe o nome do ${i+1}o. vendedor.`));
-        vendas.push(Number(prompt(`Informe o total vendido pelo ${i+1}o. vendedor.`)));
-        percentual.push(Number(prompt(`Informe o percentual das vendas do ${i+1}o. vendedor.`)));
-        //calcula a comissão
-        comissao.push((vendas[i] * percentual[i]) / 100);
+        let objeto = {
+            nome: prompt(`Informe o nome do ${i+1}o vendedor`),
+            vendas: Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`)), //no objeto não pode colocar ";"
+            percentual: Number(prompt(`Informe o percentual de vendas do ${i+1}o vendedor`))
+        }
+        //utilizando . para acessar atributo do objeto
+        objeto.comissao = (objeto.vendas * objeto.percentual) / 100;
+        vetor.push(objeto);
     }
     //relação dos vendedores e valores a receber
     var relatorio = '';
     for(i = 0;i < 3;i++) {
-        relatorio += `Vendedor ${nome[i]} vai receber: ${comissao[i]} `;
+        relatorio += `Vendedor ${vetor[i].nome} vai receber: ${vetor[i].comissao} `;
     }
     alert(relatorio);
 
     var totalVendas = 0;
     for(i=0;i<3;i++) {
-        totalVendas = totalVendas + vendas[i];
+        totalVendas = totalVendas + vetor[i].vendas;
     }
     alert(`Total de vendas de todos os vendedores: ${totalVendas}`);
 
-    var maiorValor = comissao[0];
-    var menorValor = comissao[0];
+    var objMaior = vetor[0];
+    var objMenor = vetor[0];
     for(i=1;i<3;i++) {
-        if(comissao[i] > maiorValor) {
-            maiorValor = comissao[i];
+        if(vetor[i].comissao > objMaior.comissao) {
+            objMaior = vetor[i];
         }
-        if(comissao[i] < menorValor) {
-            menorValor = comissao[i];
+        if(vetor[i].comissao < objMenor.comissao) {
+            objMenor = vetor[i];
         }
     }
-    var iMaior = comissao.indexOf(maiorValor); // recuperando a posição do maior valor
-    alert(`${nome[iMaior]} vai receber maior comissão de ${maiorValor}`);
-    alert(`${nome[comissao.indexOf(menorValor)]} vai receber menor comissão de ${menorValor}`);
+    alert(`${objMaior.nome} vai receber maior comissão de ${objMaior.comissao}`);
+    alert(`${objMenor.nome} vai receber menor comissão de ${objMenor.comissao}`);
 }
 
 function exe7() {
@@ -199,26 +201,28 @@ function exe8() {
 }
 
 function exe9() {
-    var nomes = [], codigos = [], precos = [];
+    var vetor = [];
 
     for(var i=0;i<3;i++) {
-        nomes.push(prompt(`Informe o nome do produto ${i + 1}`));
-        codigos.push(Number(prompt(`Informe o código do produto ${i+1}`)));
-        precos.push(Number(prompt(`Informe o preço do produto ${i+1}`)));
-    }
-
-    var novo
-    for(var i=0;i<3;i++) {
-        if((codigos[i] % 2 == 0) && (precos[i] > 1000)) {
-            novo = precos[i] + precos[i] * 20/100;
-        } else if (codigos[i] % 2 == 0) {
-            novo = precos[i] + precos[i] * 15/100;
-        } else if (precos[i] > 100) {
-            novo = precos[i] + precos[i] * 10/100;
-        } else {
-            novo = precos[i];
+        let objeto = {
+            nome: prompt(`Informe o nome do produto ${i + 1}`),
+            codigo: Number(prompt(`Informe o código do produto ${i+1}`)),
+            preco: Number(prompt(`Informe o preço do produto ${i+1}`)),
+            novo: 0
         }
-        alert(`${nomes[i]} - ${codigos[i]} ${precos[i]} - ${novo}`);
+        vetor.push(objeto);
     }
 
+    for(var i=0;i<3;i++) {
+        if((vetor[i].codigo % 2 == 0) && (vetor[i].preco > 1000)) {
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 20/100;
+        } else if (vetor[i].codigo % 2 == 0) {
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 15/100;
+        } else if (vetor[i].preco > 100) {
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 10/100;
+        } else {
+            vetor[i].novo = vetor[i].preco;
+        }
+        alert(`${vetor[i].nome} | ${vetor[i].codigo} | ${vetor[i].preco} | ${vetor[i].novo}`);
+    }
 }
