@@ -57,7 +57,7 @@ function saida(vet) {
 }
 
 
-function exe6(vet) {
+function exe6() {
     let vetor = []
     
     entrada(vetor);
